@@ -31,6 +31,10 @@
     "api",
     "model-context-protocol"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lazy-ants/hetzner-mcp-server.git"
+  },
   "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.27.0",
