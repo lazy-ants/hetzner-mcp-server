@@ -71,7 +71,12 @@ const PINS: Pin[] = [
   // Advisory range currently reaches < 4.12.34 across four GHSAs.
   { name: 'hono', floor: '4.12.34', advisory: 'GHSA-8j4g-w8fx-2239 et al. (checked 2026-08-20)' },
   // Stay on 3.x — ajv declares `fast-uri: ^3.0.1`, so the 4.x branch is out of reach.
-  { name: 'fast-uri', floor: '3.1.7', advisory: 'GHSA-7p8r-x3mc-p8w7 host confusion, extended through 3.1.5 by GHSA-5jgf-p345-68v8, GHSA-f65p-4m7j-42xc, GHSA-fph4-wmhf-6fwf and GHSA-jqff-g426-hqxp (checked 2026-09-07)' },
+  // GHSA-5jgf-p345-68v8, GHSA-f65p-4m7j-42xc, GHSA-fph4-wmhf-6fwf and
+  // GHSA-jqff-g426-hqxp extended the range through 3.1.5, so 3.1.6 is the first
+  // unaffected release. The floor takes 3.1.7, the current top of the 3.x line:
+  // a floor above the minimum costs nothing and absorbs the next advisory that
+  // lands inside 3.1.6.
+  { name: 'fast-uri', floor: '3.1.7', advisory: 'GHSA-7p8r-x3mc-p8w7 host confusion et al. (checked 2026-09-07)' },
   // Dev-only (eslint -> minimatch), so it never reaches the `--omit=dev` gate,
   // but it rots the same way and is guarded here so the rot is visible.
   { name: 'brace-expansion', floor: '5.0.9', advisory: 'GHSA-rgw5-rvv9-x895 DoS (checked 2026-08-20)' },
