@@ -67,11 +67,11 @@ interface Pin {
 }
 
 const PINS: Pin[] = [
-  { name: 'qs', floor: '6.15.2', advisory: 'GHSA-q8mj-m7cp-5q26 DoS (checked 2026-08-20)' },
+  { name: 'qs', floor: '6.16.0', advisory: 'GHSA-q8mj-m7cp-5q26 DoS, extended through 6.15.3 by GHSA-x5fp-wj9c-mxmx and GHSA-4mjr-xmp4-gh2g (checked 2026-09-07)' },
   // Advisory range currently reaches < 4.12.34 across four GHSAs.
   { name: 'hono', floor: '4.12.34', advisory: 'GHSA-8j4g-w8fx-2239 et al. (checked 2026-08-20)' },
   // Stay on 3.x — ajv declares `fast-uri: ^3.0.1`, so the 4.x branch is out of reach.
-  { name: 'fast-uri', floor: '3.1.5', advisory: 'GHSA-7p8r-x3mc-p8w7 host confusion (checked 2026-08-20)' },
+  { name: 'fast-uri', floor: '3.1.7', advisory: 'GHSA-7p8r-x3mc-p8w7 host confusion, extended through 3.1.5 by GHSA-5jgf-p345-68v8, GHSA-f65p-4m7j-42xc, GHSA-fph4-wmhf-6fwf and GHSA-jqff-g426-hqxp (checked 2026-09-07)' },
   // Dev-only (eslint -> minimatch), so it never reaches the `--omit=dev` gate,
   // but it rots the same way and is guarded here so the rot is visible.
   { name: 'brace-expansion', floor: '5.0.9', advisory: 'GHSA-rgw5-rvv9-x895 DoS (checked 2026-08-20)' },
